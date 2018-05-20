@@ -8,5 +8,5 @@ description: "XuS's Coding Blog"
 keyword: "Coding, XuS"
 url: "https://yehuo.github.io"
 baseurl: "/"
-theme: minima
+theme: jekyll-theme-cayman
 
