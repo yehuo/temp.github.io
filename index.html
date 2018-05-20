@@ -1,1 +1,14 @@
-Hallo Blog
+---
+layout: default
+title: XuS's Blog
+---
+<h2>{{ page.title }}</h2>
+<p>Current Blog</p>
+<ul>
+    {% for post in site.posts %}
+    <li>
+        {{ psot.date | date_to_string }}
+        <a href="{{ site.baseurl }}{{ post.url }} ">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
