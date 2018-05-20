@@ -10,9 +10,3 @@ keyword: "窗外蟋蟀, keysaim"
 url: "https://keysaim.github.io"
 baseurl: ""
 theme: minima
-
-=======
-theme:minima
-
-theme: jekyll-theme-cayman
->>>>>>> fd042a4558a21372f72b63f2a3fe1c9cd082fba3
