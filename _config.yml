@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Site settings
 
 title: 窗外蟋蟀
@@ -9,4 +10,3 @@ description: "描述"
 keyword: "窗外蟋蟀, keysaim"
 url: "https://keysaim.github.io"
 baseurl: ""
-theme: minima
