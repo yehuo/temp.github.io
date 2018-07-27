@@ -55,6 +55,7 @@ def main():
     for thread in threads:
         thread.join()
 
+    ips=list(set(ips))
     print(ips)
 
 
