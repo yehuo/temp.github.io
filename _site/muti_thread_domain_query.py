@@ -5,6 +5,8 @@ import re
 
 domains = []
 ips = []
+thread_limit = 4
+threading.Semaphore(thread_limit)
 
 
 class ThreadFunc(object):
@@ -22,15 +24,15 @@ def domain_reader():
     content = file.readlines()
     # 验证ip\域名有效性
     for domain in content:
-        domains.append(domain)
+        domains.append(domain.strip())
     file.close()
     return domains
 
 
-def loop(i):
-    domain_name=domains[i]
+def loop(domain_name):
+    print(threading.current_thread().name, domain_name)
     command = "ping " + domain_name + " -w 5 -n 1"
-    print(command)
+    # print(command)
     result = os.popen(command)
     result = result.read()
     ip = re.findall(r"\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b",
@@ -44,9 +46,9 @@ def main():
     domain_reader()
     count_domain = range(len(domains))
     for i in count_domain:
-        print(domains[i])
+        # print(domains[i])
 
-        t = threading.Thread(target=ThreadFunc(loop, (i,), loop.__name__))
+        t = threading.Thread(target=ThreadFunc(loop, (domains[i],), loop.__name__))
         threads.append(t)
 
     for thread in threads:
@@ -55,8 +57,8 @@ def main():
     for thread in threads:
         thread.join()
 
-    ips=list(set(ips))
-    print(ips)
+    iplist = list(set(ips))
+    print(iplist)
 
 
 if __name__ == '__main__':
