@@ -1,12 +1,10 @@
-# Site settings
+# # Site settings
 
-title: XuS's Blog
-SEOTitle:  XuS Blog
-header-img: img/header1.jpg
-# email: keysai@gmail.com
-description: "XuS's Coding Blog"
-keyword: "Coding, XuS"
-url: "https://yehuo.github.io"
-baseurl: "/"
-# theme: jekyll-theme-cayman
+# title: XuS's Blog
+# SEOTitle:  XuS Blog
+# header-img: img/header1.jpg
+# description: "XuS's Coding Blog"
+# keyword: "Coding, XuS"
+# url: "https://yehuo.github.io"
+# baseurl: "/"
 theme: jekyll-theme-cayman
